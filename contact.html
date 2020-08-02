@@ -1,0 +1,228 @@
+
+<html>
+
+<head>
+
+<title>contact</title>
+<script>
+function Captcha(){
+    var a = Math.floor(Math.random()*100000);
+	document.getElementById("cap").value = a;
+
+}
+function validate(){   var captcha = document.forms["RegForm"]["captcha"];  
+    
+	
+    var name = document.forms["RegForm"]["name"];
+    var email = document.forms["RegForm"]["email"];    
+    var phone = document.forms["RegForm"]["telephone"];  
+    var what =  document.forms["RegForm"]["subject"];    
+    var address = document.forms["RegForm"]["address"];  
+   
+    if (name.value == "")                                  
+    {
+        window.alert("Please enter your name.");
+        name.focus();
+        return false;
+    }
+   
+    if (address.value == "")                              
+    {
+        window.alert("Please enter your address.");
+        name.focus();
+        return false;
+    }
+       
+    if (email.value == "")                                  
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+   
+    if (email.value.indexOf("@", 0) < 0)                
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+   
+    if (email.value.indexOf(".", 0) < 0)                
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+   
+    if (phone.value == "")                          
+    {
+        window.alert("Please enter your telephone number.");
+        phone.focus();
+        return false;
+    }
+   
+   
+    if (captcha.value != "4564")                                  
+    {
+        window.alert("Captcha is wrong, Enter again");
+        captcha.focus();
+        return false;
+    }
+   
+return true;
+
+}</script>
+<style>
+body {background-image: url("2.jpg");
+background-repeat:repeat-x;
+background-size: 2500px;
+}
+.dropbtn {
+
+  color:blue;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  background-colour:yellow;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+background-colour:yellow;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+ 
+ 
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: yellow;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: yellow;}
+.img-container {
+        text-align: center;
+      }
+</style>
+<title>CONTACT US</title>
+
+
+<link rel="stylesheet" href="nav.css">
+
+
+</head>
+
+<body onload="Captcha()">
+<div class="img-container">
+<a href="home.html">
+<img src="1.png" alt="John Doe" height="50" width="50">
+</a>
+</div>
+
+
+<br>
+<div class="horizontal">
+
+
+<div class="dropdown">
+  <button class="dropbtn">GENRES</button>
+  <div class="dropdown-content">
+    <a href="mystery.html">Mystery</a>
+    <a href="comics.html">Comics</a>
+    <a href="gk.html">General Knowledge</a>
+  </div>
+</div>
+<a href="aboutus.html">ABOUT</a>
+<a href="offers.html">OFFERS</a>
+<a href="contact.html">CONTACT</a>
+
+
+</div>
+
+
+<p>
+
+<form name="RegForm" action="home.html"  onsubmit="return validate()" method="post">
+<center> <font color="white"> <h2> Enquiry Form </h2> </font> </center>
+<table align="center" height="600">
+<tr>
+<td> <font color="white"> Name  </font> </td>
+<td>  
+<input type="text" size=65 name="name">
+</td>
+</tr>
+<tr>
+<td> <font color="white"> Address </font> </td>
+<td>
+<input type="text" size=65 name="address">
+</td>
+</tr>
+<tr>
+<td> <font color="white"> Our Branch closest to you </font> </td>
+<td>
+<select>
+  <option value="pune">Pune</option>
+  <option value="mumbai">Mumbai</option>
+  <option value="delhi">Delhi</option>
+  <option value="banglore">Banglore</option>
+  <option value="chennai">Chennai</option>
+
+</select>
+</td>
+</tr>
+<tr>
+<td> <font color="white"> e-mail id </font> </td>
+<td>
+<input type="text" size=65 name="email">
+</td>
+</tr>
+<tr>
+<td> <font color="white"> Phone Number </font> </td>
+<td>
+<input type="text" size=65 name="telephone">
+</td>
+</tr>
+<tr>
+<td>  <font color="white"> Comments </font>  </td>
+<td>
+<textarea rows="3" cols="30"> </textarea>
+</td>
+</tr>
+ <tr> 
+ <td><font color="white"> Enter Captcha </font> </td> 
+<td rowspan="2"><input type="text" size="6" name="captcha"></td> 
+  </tr> 
+  <tr> 
+ <td><font color="green" size="5px"> <input type="number" size="6" id="cap" disabled></font> </td> 
+   </tr> 
+
+<tr>
+<td> </td>
+<td>
+
+<input type="submit" color="white">
+</td>
+</tr>
+
+
+</table>
+
+</form>
+</p>
+</body>
+
+</html>
